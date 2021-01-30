@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script >
+    $(document).ready(function() {
+          $(".menu-icon").on("click", function() {
+                $("nav ul").toggleClass("showing");
+          });
+    });
+
+    // Scrolling Effect
+
+    $(window).on("scroll", function() {
+          if($(window).scrollTop()) {
+                $('nav').addClass('black');
+          }
+
+          else {
+                $('nav').removeClass('black');
+          }
+    })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" >
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous" >
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+    <script>
+        $(document).ready(function(){
+        $("[rel='tooltip']").tooltip();
+      });
+
+
+
+                                                            $(document).ready(function()
+                                                      {
+                                                          /* smooth scrolling for scroll to top */
+                                                      	$('#to-top').bind('click', function()
+                                                      	{
+                                                      		$('body,html').animate({
+                                                      			scrollTop: 0},
+                                                      			2500);
+                                                      	});
+
+                                                      	//Easing Scroll replace Anchor name in URL and Offset Position
+                                                      	$(function(){
+                                                      		$('a[href*=#]:not([href=#])').click(function()
+                                                      		{
+                                                      			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+
+                                                      				var target = $(this.hash);
+                                                      				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                                                      				if (target.length) {
+                                                      					$('html,body').animate({
+                                                      						scrollTop: target.offset().top -420
+                                                      					}, 3500, 'easeOutBounce');
+                                                      					return false;
+                                                      				}
+                                                      			}
+                                                      		});
+                                                      	});
+                                                      });
+                                                      $(document).ready(function(){
+                                                          $(".dropdown").hover(
+                                                              function() {
+                                                                  $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+                                                                  $(this).toggleClass('open');
+                                                              },
+                                                              function() {
+                                                                  $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+                                                                  $(this).toggleClass('open');
+                                                              }
+                                                          );
+                                                      });
+                                                      $(document).ready(function()
+                                                      {
+
+                                                      	// Closes the sidebar menu on menu-close button click event
+                                                      	$("#menu-close").click(function(e)							//declare the element event ...'(e)' = event (shorthand)
+                                                      	{
+                                                      																// - will not work otherwise")
+                                                      		$("#sidebar-wrapper").toggleClass("active");			//instead on click event toggle active CSS element
+                                                      		e.preventDefault(); 									//prevent the default action ("Do not remove as the code
+
+                                                      		/*!
+                                                      		======================= Notes ===============================
+                                                      		* see: .sidebar-wrapper.active in: style.css
+                                                      		==================== END Notes ==============================
+                                                      		*/
+                                                      	});															//Close 'function()'
+
+                                                      	// Open the Sidebar-wrapper on Hover
+                                                      	$("#menu-toggle").hover(function(e)							//declare the element event ...'(e)' = event (shorthand)
+                                                      	{
+                                                      		$("#sidebar-wrapper").toggleClass("active",true);		//instead on click event toggle active CSS element
+                                                      		e.preventDefault();										//prevent the default action ("Do not remove as the code
+                                                      	});
+
+                                                      	$("#menu-toggle").bind('click',function(e)					//declare the element event ...'(e)' = event (shorthand)
+                                                      	{
+                                                      		$("#sidebar-wrapper").toggleClass("active",true);		//instead on click event toggle active CSS element
+                                                      		e.preventDefault();										//prevent the default action ("Do not remove as the code
+                                                      	});															//Close 'function()'
+
+                                                      	$('#sidebar-wrapper').mouseleave(function(e)				//declare the jQuery: mouseleave() event
+                                                      																// - see: ('//api.jquery.com/mouseleave/' for details)
+                                                      	{
+                                                      		/*! .toggleClass( className, state ) */
+                                                      		$('#sidebar-wrapper').toggleClass('active',false);		/* toggleClass: Add or remove one or more classes from each element
+                                                      																in the set of matched elements, depending on either the class's
+                                                      																presence or the value of the state argument */
+                                                      		e.stopPropagation();									//Prevents the event from bubbling up the DOM tree
+                                                      																// - see: ('//api.jquery.com/event.stopPropagation/' for details)
+
+                                                      		e.preventDefault();										// Prevent the default action of the event will not be triggered
+                                                      																// - see: ('//api.jquery.com/event.preventDefault/' for details)
+                                                      	});
+                                                      });
+                                                      // Closes the sidebar menu on menu-close button click event
+                                                      $("#menu-close").click(function(e)							//declare the element event ...'(e)' = event (shorthand)
+                                                      {
+                                                      															// - will not work otherwise")
+                                                      	$("#sidebar-wrapper").toggleClass("active");			//instead on click event toggle active CSS element
+                                                      	e.preventDefault(); 									//prevent the default action ("Do not remove as the code
+
+                                                      	/*!
+                                                      	======================= Notes ===============================
+                                                      	* see: .sidebar-wrapper.active in: style.css
+                                                      	==================== END Notes ==============================
+                                                      	*/
+                                                      });
+
+
+    </script>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
